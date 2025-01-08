@@ -1,575 +1,6 @@
-﻿Universidad  Privada  de  Tacna    ![ref1]![ref2]![ref3]![ref4]![ref5]![ref6]![ref3]![ref7]![ref3]![ref8]
+﻿**HU01: Registrar Usuario** 
 
-Facultad  de Ingeniería ![ref3]   ![ref6]![ref5]![ref9]![ref3]![ref10]
-
-Escuela  Profesional  de  Ingeniería  de  Sistemas ![ref3]   ![ref11]![ref12]![ref5]![ref6]![ref3]![ref10]![ref3]![ref6]![ref5]![ref13]![ref3]![ref7]
-
-“AÑO DEL BICENTENARIO  De JOSE FAUSTINO SANCHEZ CARRION” 
-
-**FACULTAD DE INGENIERÍA**   
-
-**ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS**   
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.014.png)
-
-NOMBRE DEL TRABAJO: “Trabajo de Asignación N°01**”**  TEMA DEL TRABAJO*:* **“Avance FD03 - Diagramas”**  
-
-**Integrantes:** 
-
-|**Nº**  |**Código Universitario**  |**Apellidos y Nombres** |
-| - | - | - |
-|**1.-**  |**2017057528**  |**Ccalli Chata Joel Robert**  |
-|**2.-** |**2018060915** |**Apaza Mamani Edward** |
-
-**CURSO : “Programación Web II”** 
-
-**SECCION : “A”**   
-
-**DOCENTE**  **:**   **Ing. “Patrick Cuadros Quiroga”**  
-
-**Tacna - Perú**  **2025** 
-
-**Historias de Usuario: 10** 1.-Registrar Usuario 
-
-2\.-Iniciar Sesión 
-
-3\.-Actualizar Perfil 
-
-4\.-Agregar Mascota 5.-Notificaciones de Vacunas 6.-Historial Médico de Mascota 7.-Agregar Veterinarias 8.-Eliminar Mascota 9.-Cambiar Contraseña 
-
-10\.-Rol de Administrador 
-
-**CA: Criterios de Aceptación en Orden 1. Registrar Usuario** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Validación de Campos** 
-
-   Dado: El formulario de registro 
-
-   Cuando: Se omite un campo obligatorio 
-
-   Entonces: El sistema muestra un mensaje indicando el campo que falta. 
-
-2. **CAF02: Validación de Correo Electrónico** 
-
-   Dado: Un usuario nuevo 
-
-   Cuando: Ingresa un correo no válido 
-
-   Entonces: El sistema muestra un mensaje de error. 
-
-3. **CAF03: Contraseña Segura** 
-
-   Dado: Un usuario nuevo 
-
-   Cuando: Ingresa una contraseña débil 
-
-   Entonces: El sistema muestra un mensaje indicando los requisitos de seguridad. 
-
-4. **CAF04: Verificación de Duplicados** 
-
-   Dado: Un usuario nuevo 
-
-   Cuando: Intenta registrar un correo ya existente 
-
-   Entonces: El sistema informa que el correo ya está registrado. 
-
-5. **CAF05: Confirmación de Registro** 
-
-   Dado: Un usuario nuevo 
-
-   Cuando: Completa correctamente el formulario 
-
-   Entonces: El sistema envía un correo de confirmación. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Seguridad de Contraseñas** 
-
-   Las contraseñas deben almacenarse cifradas utilizando un algoritmo como bcrypt. 
-
-2. **CANF02: Tiempo de Respuesta** 
-
-   El registro debe completarse en menos de 3 segundos en condiciones normales. ![ref14]
-
-**2. Iniciar Sesión** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Validación de Credenciales** 
-
-   Dado: Un usuario registrado 
-
-   Cuando: Ingresa un correo y contraseña válidos 
-
-   Entonces: El sistema permite el acceso. 
-
-2. **CAF02: Manejo de Errores** 
-
-   Dado: Un usuario 
-
-   Cuando: Ingresa credenciales incorrectas 
-
-   Entonces: El sistema muestra un mensaje de error. 
-
-3. **CAF03: Bloqueo por Intentos Fallidos** 
-
-   Dado: Un usuario 
-
-   Cuando: Se exceden 5 intentos fallidos de inicio de sesión 
-
-   Entonces: El sistema bloquea la cuenta temporalmente. 
-
-4. **CAF04: Recordar Sesión** 
-
-   Dado: Un usuario 
-
-   Cuando: Activa la opción "Recordar sesión" 
-
-   Entonces: El sistema mantiene la sesión iniciada hasta que el usuario la cierre. 
-
-5. **CAF05: Cierre Automático** 
-
-   Dado: Un usuario 
-
-   Cuando: No realiza actividades durante 15 minutos 
-
-   Entonces: El sistema cierra la sesión automáticamente. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Tiempo de Respuesta** 
-
-   El inicio de sesión debe completarse en menos de 2 segundos. 
-
-2. **CANF02: Seguridad de Sesión** 
-
-   Las sesiones deben utilizar tokens seguros con expiración. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.016.png)
-
-3. **Actualizar Perfil** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Validación de Datos** 
-
-   Dado: El formulario de perfil 
-
-   Cuando: Se ingresan datos inválidos 
-
-   Entonces: El sistema muestra un mensaje indicando el error. 
-
-2. **CAF02: Confirmación de Cambios** 
-
-   Dado: Un usuario 
-
-   Cuando: Actualiza correctamente su perfil 
-
-   Entonces: El sistema confirma los cambios realizados. 
-
-3. **CAF03: Verificación de Correo** 
-
-   Dado: Un usuario 
-
-   Cuando: Cambia su correo electrónico 
-
-   Entonces: El sistema envía un correo para verificarlo. 
-
-4. **CAF04: Mantener Sesión Activa** 
-
-   Dado: Un usuario 
-
-   Cuando: Actualiza su perfil 
-
-   Entonces: La sesión permanece activa. 
-
-5. **CAF05: Reversión de Cambios** 
-
-   Dado: Un usuario 
-
-   Cuando: Encuentra un error en los datos actualizados Entonces: El sistema permite revertir los cambios. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Respuesta del Servidor** 
-
-   Los cambios deben reflejarse en menos de 3 segundos. 
-
-2. **CANF02: Compatibilidad de Navegadores** 
-
-   La funcionalidad debe operar correctamente en Chrome, Firefox y Edge. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.017.png)
-
-**4. Agregar Mascota** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Validación de Campos Obligatorios** Dado: El formulario de agregar mascota 
-
-   Cuando: Falta un campo obligatorio 
-
-   Entonces: El sistema muestra un mensaje de error. 
-
-2. **CAF02: Registro Exitoso** 
-
-   Dado: Un usuario 
-
-   Cuando: Completa correctamente el formulario Entonces: La mascota se registra en su cuenta. 
-
-3. **CAF03: Especies y Razas** 
-
-   Dado: Un usuario 
-
-   Cuando: Selecciona la especie de la mascota Entonces: El sistema muestra las razas disponibles. 
-
-4. **CAF04: Fecha de Nacimiento** 
-
-   Dado: Un usuario 
-
-   Cuando: Ingresa una fecha inválida 
-
-   Entonces: El sistema muestra un mensaje de error. 
-
-5. **CAF05: Confirmación de Registro** 
-
-   Dado: Un usuario 
-
-   Cuando: Agrega una mascota correctamente Entonces: El sistema confirma el registro exitoso. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Tiempo de Respuesta** 
-
-   El registro de la mascota debe completarse en menos de 3 segundos. 
-
-2. **CANF02: Seguridad de Datos** 
-
-   Los datos de la mascota deben almacenarse de manera segura para evitar accesos no autorizados. 
-
-**5. Notificaciones de Vacunas** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Registro de Vacunas** 
-
-   Dado: Una mascota registrada 
-
-   Cuando: El usuario añade una vacuna con fecha 
-
-   Entonces: El sistema programa una notificación de recordatorio. 
-
-2. **CAF02: Configuración de Notificaciones** 
-
-   Dado: Un usuario 
-
-   Cuando: Accede a la configuración de notificaciones 
-
-   Entonces: Puede personalizar los tiempos de aviso antes de las vacunas. 
-
-3. **CAF03: Notificación Automática** 
-
-   Dado: Una vacuna programada 
-
-   Cuando: Llega la fecha de recordatorio 
-
-   Entonces: El sistema envía una notificación al usuario. 
-
-4. **CAF04: Varios Canales** 
-
-   Dado: Un usuario 
-
-   Cuando: Configura las notificaciones 
-
-   Entonces: Puede elegir entre correo electrónico, SMS o notificaciones push. 
-
-5. **CAF05: Confirmación de Recepción** 
-
-   Dado: Una notificación enviada 
-
-   Cuando: El usuario interactúa con ella 
-
-   Entonces: El sistema registra la confirmación de recepción. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Frecuencia de Envío** 
-
-   Las notificaciones deben enviarse con una tasa máxima de 2 por segundo para evitar sobrecargas. 
-
-2. **CANF02: Disponibilidad del Sistema** 
-
-   Las notificaciones deben funcionar con un 99.9% de disponibilidad anual. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.018.png)
-
-**6. Historial Médico de Mascota** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Visualización de Historial** 
-
-   Dado: Una mascota seleccionada 
-
-   Cuando: El usuario accede a su perfil 
-
-   Entonces: El sistema muestra el historial médico completo. 
-
-2. **CAF02: Registro de Consultas** 
-
-   Dado: Una mascota 
-
-   Cuando: El usuario registra una consulta médica 
-
-   Entonces: El sistema guarda los detalles en el historial. 
-
-3. **CAF03: Filtros de Búsqueda** 
-
-   Dado: Un historial médico extenso 
-
-   Cuando: El usuario aplica filtros por fecha o tipo de evento 
-
-   Entonces: El sistema muestra los resultados relevantes. 
-
-4. **CAF04: Edición de Eventos** 
-
-   Dado: Un usuario 
-
-   Cuando: Desea corregir información de un evento médico 
-
-   Entonces: El sistema permite la edición con restricciones de permisos. 
-
-5. **CAF05: Exportar Historial** 
-
-   Dado: Un usuario 
-
-   Cuando: Solicita exportar el historial 
-
-   Entonces: El sistema genera un archivo en formato PDF o Excel. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Escalabilidad** 
-
-   El historial debe manejar hasta 1,000 registros por mascota sin disminuir el rendimiento. 
-
-2. **CANF02: Seguridad de Datos** 
-
-   Los historiales deben estar protegidos con cifrado en tránsito y en reposo. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.019.png)
-
-**7. Agregar Veterinarias** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Validación de Datos** 
-
-   Dado: El formulario de registro de veterinarias 
-
-   Cuando: Faltan datos obligatorios 
-
-   Entonces: El sistema muestra un mensaje de error. 
-
-2. **CAF02: Registro Exitoso** 
-
-   Dado: Un usuario administrador 
-
-   Cuando: Completa el formulario correctamente 
-
-   Entonces: La veterinaria se registra en el sistema. 
-
-3. **CAF03: Geolocalización** 
-
-   Dado: Una veterinaria registrada 
-
-   Cuando: Se añaden coordenadas geográficas 
-
-   Entonces: El sistema las asocia correctamente para búsquedas. 
-
-4. **CAF04: Confirmación de Registro** 
-
-   Dado: Un usuario administrador 
-
-   Cuando: Registra una veterinaria 
-
-   Entonces: El sistema muestra un mensaje de éxito. 
-
-5. **CAF05: Gestión de Veterinarias** 
-
-   Dado: Una veterinaria registrada 
-
-   Cuando: El usuario desea actualizar información 
-
-   Entonces: El sistema permite realizar modificaciones. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Respuesta del Servidor** 
-
-   La veterinaria debe registrarse en menos de 2 segundos. 
-
-2. **CANF02: Accesibilidad** 
-
-   La funcionalidad debe ser accesible desde dispositivos móviles y de escritorio. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.020.png)
-
-**8. Eliminar Mascota** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Confirmación de Eliminación** 
-
-   Dado: Un usuario 
-
-   Cuando: Solicita eliminar una mascota 
-
-   Entonces: El sistema solicita confirmación antes de proceder. 
-
-2. **CAF02: Validación de Permisos** 
-
-   Dado: Un usuario 
-
-   Cuando: Intenta eliminar una mascota 
-
-   Entonces: El sistema valida que sea el propietario de la cuenta. 
-
-3. **CAF03: Eliminación Exitosa** 
-
-   Dado: Una mascota registrada 
-
-   Cuando: El usuario confirma la eliminación 
-
-   Entonces: La mascota se elimina del sistema. 
-
-4. **CAF04: Historial Asociado** 
-
-   Dado: Una mascota eliminada 
-
-   Cuando: Se intenta acceder a su historial 
-
-   Entonces: El sistema informa que la mascota ya no está disponible. 
-
-5. **CAF05: Cancelación de Notificaciones** 
-
-   Dado: Una mascota eliminada 
-
-   Cuando: Tenía vacunas programadas 
-
-   Entonces: El sistema cancela las notificaciones asociadas. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Persistencia** 
-
-   La eliminación debe reflejarse en la base de datos en menos de 3 segundos. 
-
-2. **CANF02: Seguridad de Permisos** 
-
-   Solo usuarios autenticados y autorizados pueden eliminar mascotas. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.021.png)
-
-**9. Cambiar Contraseña** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Validación de Contraseña Actual** 
-
-   Dado: Un usuario 
-
-   Cuando: Ingresa su contraseña actual incorrecta 
-
-   Entonces: El sistema muestra un mensaje de error. 
-
-2. **CAF02: Validación de Nueva Contraseña** 
-
-   Dado: Un usuario 
-
-   Cuando: Ingresa una nueva contraseña que no cumple con los requisitos Entonces: El sistema muestra un mensaje indicando los errores. 
-
-3. **CAF03: Confirmación de Cambio** 
-
-   Dado: Un usuario 
-
-   Cuando: Cambia su contraseña exitosamente 
-
-   Entonces: El sistema confirma el cambio. 
-
-4. **CAF04: Notificación de Cambio** 
-
-   Dado: Un usuario 
-
-   Cuando: Cambia su contraseña 
-
-   Entonces: El sistema envía una notificación al correo asociado. 
-
-5. **CAF05: Expiración de Sesiones** 
-
-   Dado: Un usuario 
-
-   Cuando: Cambia su contraseña 
-
-   Entonces: Todas las sesiones activas se cierran automáticamente. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Seguridad de Contraseñas** 
-
-   Las contraseñas deben encriptarse antes de ser almacenadas. 
-
-2. **CANF02: Tiempo de Respuesta** 
-
-   El cambio de contraseña debe reflejarse en menos de 3 segundos. ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.022.png)
-
-**10. Rol de Administrador** 
-
-**Criterios de Aceptación Funcionales** 
-
-1. **CAF01: Gestión de Usuarios** 
-
-   Dado: Un administrador 
-
-   Cuando: Accede al panel de usuarios 
-
-   Entonces: Puede ver, editar o eliminar usuarios. 
-
-2. **CAF02: Gestión de Veterinarias** 
-
-   Dado: Un administrador 
-
-   Cuando: Accede al panel de veterinarias 
-
-   Entonces: Puede agregar, editar o eliminar veterinarias. 
-
-3. **CAF03: Visualización de Reportes** 
-
-   Dado: Un administrador 
-
-   Cuando: Accede a la sección de reportes 
-
-   Entonces: Puede generar reportes de usuarios y mascotas. 
-
-4. **CAF04: Gestión de Roles** 
-
-   Dado: Un administrador 
-
-   Cuando: Accede a la configuración de roles 
-
-   Entonces: Puede asignar o cambiar permisos de usuarios. 
-
-5. **CAF05: Registro de Actividades** 
-
-   Dado: Un administrador 
-
-   Cuando: Realiza cambios en el sistema 
-
-   Entonces: El sistema registra las acciones para auditoría. 
-
-**Criterios de Aceptación No Funcionales** 
-
-1. **CANF01: Escalabilidad** 
-
-   El sistema debe manejar hasta 1,000 administradores concurrentes sin degradación. 
-
-2. **CANF02: Seguridad** 
-
-   El acceso a funciones administrativas debe estar protegido por autenticación de dos factores (2FA). 
-
-DIAGRAMA DE CASO DE USO: 
-
-1. **Registrar Usuario** 
+**Diagrama de Caso de Uso** 
 
 plantuml 
 
@@ -581,587 +12,11 @@ actor Usuario
 
 Usuario --> (Registrar Usuario) 
 
-(Registrar Usuario) --> (Validar datos del formulario) (Registrar Usuario) --> (Enviar correo de confirmación) (Registrar Usuario) --> (Almacenar datos cifrados) @enduml ![ref15]
+(Registrar Usuario) --> (Validar Campos) 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.024.png)
+(Registrar Usuario) --> (Verificar Duplicados) (Registrar Usuario) --> (Enviar Correo de Confirmación) @enduml 
 
-2. **Iniciar Sesión** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Iniciar Sesión) 
-
-(Iniciar Sesión) --> (Validar credenciales) 
-
-(Iniciar Sesión) --> (Mostrar error en caso de fallas) (Iniciar Sesión) --> (Generar sesión segura) 
-
-@enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.025.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.026.png)
-
-3. **Actualizar Perfil** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Actualizar Perfil) 
-
-(Actualizar Perfil) --> (Validar datos ingresados) (Actualizar Perfil) --> (Guardar cambios) (Actualizar Perfil) --> (Confirmar actualizaciones) @enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.027.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.028.png)
-
-4. **Agregar Mascota** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Agregar Mascota) 
-
-(Agregar Mascota) --> (Validar datos de la mascota) (Agregar Mascota) --> (Registrar mascota en el sistema) (Agregar Mascota) --> (Confirmar registro) 
-
-@enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.029.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.030.png)
-
-5. **Notificaciones de Vacunas** 
-
-plantuml 
-
-Universidad  Privada  de  Tacna    ![ref1]![ref2]![ref3]![ref3]![ref4]![ref5]![ref6]![ref3]![ref7]![ref8]
-
-Facultad  de Ingeniería ![ref3]   ![ref9]![ref5]![ref6]![ref10]![ref3]
-
-Escuela  Profesional  de  Ingeniería  de  Sistemas ![ref3]   ![ref11]![ref3]![ref13]![ref5]![ref6]![ref3]![ref7]![ref3]![ref6]![ref5]![ref12]![ref10]
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Notificaciones de Vacunas) 
-
-(Notificaciones de Vacunas) --> (Registrar fechas de vacunación) (Notificaciones de Vacunas) --> (Configurar recordatorios) (Notificaciones de Vacunas) --> (Enviar notificaciones automáticas) @enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.031.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.032.png)
-
-6. **Historial Médico de Mascota** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Historial Médico de Mascota) 
-
-(Historial Médico de Mascota) --> (Visualizar historial médico) (Historial Médico de Mascota) --> (Registrar consultas médicas) (Historial Médico de Mascota) --> (Filtrar eventos médicos) (Historial Médico de Mascota) --> (Exportar historial) 
-
-@enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.033.png)![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.034.png)
-
-7. **Agregar Veterinarias** 
-
-plantuml 
-
-Copiar código @startuml 
-
-actor Administrador 
-
-Administrador --> (Agregar Veterinarias) 
-
-(Agregar Veterinarias) --> (Validar datos de la veterinaria) (Agregar Veterinarias) --> (Registrar veterinaria en el sistema) (Agregar Veterinarias) --> (Asociar ubicación geográfica) (Agregar Veterinarias) --> (Confirmar registro) 
-
-@enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.035.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.036.png)
-
-8. **Eliminar Mascota** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Eliminar Mascota) 
-
-(Eliminar Mascota) --> (Validar permisos) 
-
-(Eliminar Mascota) --> (Solicitar confirmación) 
-
-(Eliminar Mascota) --> (Eliminar datos de la mascota) (Eliminar Mascota) --> (Cancelar notificaciones asociadas) @enduml ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.037.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.038.png)
-
-9. **Cambiar Contraseña** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Usuario 
-
-Usuario --> (Cambiar Contraseña) 
-
-(Cambiar Contraseña) --> (Validar contraseña actual) (Cambiar Contraseña) --> (Validar nueva contraseña) (Cambiar Contraseña) --> (Actualizar contraseña) (Cambiar Contraseña) --> (Cerrar sesiones activas) @enduml 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.039.png)
-
-10. **Rol de Administrador** 
-
-plantuml 
-
-Copiar código 
-
-@startuml 
-
-actor Administrador 
-
-Administrador --> (Gestionar Usuarios) Administrador --> (Gestionar Veterinarias) Administrador --> (Visualizar Reportes) Administrador --> (Configurar Roles) Administrador --> (Auditar Actividades) @enduml 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.040.png)
-
-DIAGRAMAS DE SECUENCIA 
-
-1. **Registrar Usuario** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Registrar Usuario) 
-
-`    `(Registrar Usuario) --> (Validar datos del formulario)     (Registrar Usuario) --> (Enviar correo de confirmación)     (Registrar Usuario) --> (Almacenar datos cifrados) 
-
-**Diagramas de Secuencia CAF01: Validación de Campos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Envía formulario con campos obligatorios incompletos 
-
-`    `Sistema-->>Usuario: Retorna mensaje de error indicando los campos faltantes 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.041.png)
-
-**CAF02: Validación de Correo Electrónico** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa correo electrónico no válido     Sistema-->>Usuario: Muestra mensaje de error 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.042.png)
-
-**CAF03: Contraseña Segura** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa una contraseña débil 
-
-`    `Sistema-->>Usuario: Solicita contraseña que cumpla con requisitos de seguridad 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.043.png)
-
-**CAF04: Verificación de Duplicados** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Intenta registrar un correo ya existente 
-
-`    `Sistema-->>Usuario: Retorna mensaje indicando que el correo ya está registrado 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.044.png)
-
-**CAF05: Confirmación de Registro** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Envía formulario válido 
-
-`    `Sistema-->>Usuario: Muestra mensaje confirmando el registro exitoso 
-
-`    `Sistema-->>Usuario: Envía correo de confirmación 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.045.png)
-
-**CANF01: Seguridad de Contraseñas** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Cifra las contraseñas utilizando bcrypt 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.046.png)
-
-**CANF02: Tiempo de Respuesta** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Completa el registro 
-
-`    `Sistema-->>Usuario: Confirma el registro en menos de 3 segundos ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.047.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.048.png)
-
-2. **Iniciar Sesión** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Iniciar Sesión) 
-
-`    `(Iniciar Sesión) --> (Validar credenciales) 
-
-`    `(Iniciar Sesión) --> (Mostrar error en caso de fallas)     (Iniciar Sesión) --> (Generar sesión segura) 
-
-**Diagramas de Secuencia** 
-
-**CAF01: Validación de Credenciales** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa correo y contraseña válidos     Sistema-->>Usuario: Permite acceso al sistema 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.049.png)
-
-**CAF02: Manejo de Errores** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa credenciales incorrectas     Sistema-->>Usuario: Muestra mensaje de error 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.050.png)
-
-**CAF03: Bloqueo por Intentos Fallidos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `loop Hasta 5 intentos 
-
-`        `Usuario->>Sistema: Ingresa credenciales incorrectas         Sistema-->>Usuario: Muestra mensaje de error 
-
-`    `end 
-
-`    `Sistema-->>Usuario: Bloquea la cuenta temporalmente 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.051.png)
-
-**CAF04: Recordar Sesión** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Activa opción "Recordar sesión"     Sistema-->>Usuario: Mantiene la sesión iniciada 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.052.png)
-
-**CAF05: Cierre Automático** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: No realiza actividad por 15 minutos     Sistema-->>Usuario: Cierra sesión automáticamente 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.053.png)
-
-**CANF01: Tiempo de Respuesta** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Usuario 
-
-participant Sistema 
-
-Usuario->>Sistema: Solicita iniciar sesión Sistema-->>Usuario: Responde en menos de 2 segundos 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.054.png)
-
-**CANF02: Seguridad de Sesión** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Genera token seguro con expiración 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.055.png)
-
-3. **Actualizar Perfil** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Actualizar Perfil) 
-
-`    `(Actualizar Perfil) --> (Validar datos ingresados)     (Actualizar Perfil) --> (Guardar cambios) 
-
-`    `(Actualizar Perfil) --> (Confirmar actualizaciones) 
-
-**Diagramas de Secuencia CAF01: Validación de Datos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa datos inválidos 
-
-`    `Sistema-->>Usuario: Retorna mensaje indicando los errores 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.056.png)
-
-**CAF02: Confirmación de Cambios** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Actualiza su perfil 
-
-`    `Sistema-->>Usuario: Confirma que los cambios fueron realizados exitosamente ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.057.png)
-
-**CAF03: Verificación de Correo** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Cambia su correo electrónico     Sistema-->>Usuario: Envía correo de verificación 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.058.png)
-
-**CAF04: Mantener Sesión Activa** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Realiza actualizaciones en su perfil 
-
-`    `Sistema-->>Usuario: Mantiene la sesión activa durante el proceso 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.059.png)
-
-**CAF05: Reversión de Cambios** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Usuario     participant Sistema 
-
-Usuario->>Sistema: Solicita deshacer cambios en su perfil Sistema-->>Usuario: Reversa los cambios y confirma la acción 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.060.png)
-
-**CANF01: Respuesta del Servidor** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Solicita actualizar su perfil 
-
-`    `Sistema-->>Usuario: Responde en menos de 3 segundos ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.061.png)
-
-**CANF02: Compatibilidad de Navegadores** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Accede desde un navegador compatible 
-
-`    `Sistema-->>Usuario: Funciona correctamente en Chrome, Firefox y Edge 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.062.png)
-
-4. **Agregar Mascota** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Agregar Mascota) 
-
-`    `(Agregar Mascota) --> (Validar datos de la mascota) 
-
-`    `(Agregar Mascota) --> (Registrar mascota en el sistema)     (Agregar Mascota) --> (Confirmar registro) 
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.001.png)
 
 **Diagramas de Secuencia** 
 
@@ -1173,17 +28,15 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Usuario 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Usuario->>Sistema: Envía formulario con campos incompletos 
+Usuario ->> Sistema: Envía formulario con campos incompletos Sistema -->> Usuario: Muestra mensaje indicando los campos faltantes 
 
-`    `Sistema-->>Usuario: Muestra mensaje indicando los campos faltantes 
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.002.png)
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.063.png)
-
-**CAF02: Registro Exitoso** 
+**CAF02: Verificación de Correo Electrónico** 
 
 mermaid 
 
@@ -1191,17 +44,15 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Usuario 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Usuario->>Sistema: Completa el formulario con datos válidos 
+Usuario ->> Sistema: Ingresa correo electrónico no válido Sistema -->> Usuario: Muestra mensaje de error 
 
-`    `Sistema-->>Usuario: Registra la mascota y confirma el registro 
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.003.png)
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.064.png)
-
-**CAF03: Especies y Razas** 
+**CAF03: Contraseña Segura** 
 
 mermaid 
 
@@ -1209,17 +60,15 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Usuario 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Usuario->>Sistema: Selecciona especie de mascota 
+Usuario ->> Sistema: Ingresa una contraseña débil Sistema -->> Usuario: Muestra requisitos de seguridad 
 
-`    `Sistema-->>Usuario: Muestra las razas disponibles para la especie 
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.004.png)
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.065.png)
-
-**CAF04: Fecha de Nacimiento** 
+**CAF04: Verificación de Duplicados** 
 
 mermaid 
 
@@ -1227,13 +76,15 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Usuario 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Usuario->>Sistema: Ingresa fecha de nacimiento inválida     Sistema-->>Usuario: Muestra mensaje indicando el error 
+Usuario ->> Sistema: Intenta registrarse con un correo ya existente 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.066.png)
+Sistema -->> Usuario: Muestra mensaje indicando duplicado 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.005.png)
 
 **CAF05: Confirmación de Registro** 
 
@@ -1243,717 +94,13 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Registra mascota con datos válidos 
-
-`    `Sistema-->>Usuario: Confirma que la mascota fue agregada correctamente 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.067.png)
-
-**CANF01: Tiempo de Respuesta** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Completa el registro 
-
-`    `Sistema-->>Usuario: Responde en menos de 3 segundos 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.068.png)
-
-**CANF02: Seguridad de Datos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Cifra datos sensibles de la mascota al almacenarlos 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.069.png)
-
-5. **Notificaciones de Vacunas** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Notificaciones de Vacunas) 
-
-`    `(Notificaciones de Vacunas) --> (Registrar fechas de vacunación)     (Notificaciones de Vacunas) --> (Configurar recordatorios) 
-
-`    `(Notificaciones de Vacunas) --> (Enviar notificaciones automáticas) 
-
-**Diagramas de Secuencia CAF01: Registro de Vacunas** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Registra una vacuna con fecha 
-
-`    `Sistema-->>Usuario: Programa la notificación correspondiente 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.070.png)
-
-**CAF02: Configuración de Notificaciones** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Configura el tiempo de aviso antes de la vacuna     Sistema-->>Usuario: Guarda la configuración personalizada 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.071.png)
-
-**CAF03: Notificación Automática** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `participant Usuario 
-
-`    `Sistema-->>Usuario: Envía notificación en la fecha programada     Usuario->>Sistema: Confirma recepción de la notificación 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.072.png)
-
-**CAF04: Varios Canales** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Selecciona canal de notificación (email, SMS, push) 
-
-`    `Sistema-->>Usuario: Guarda la configuración seleccionada 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.073.png)
-
-**CAF05: Confirmación de Recepción** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `participant Usuario 
-
-`    `Sistema-->>Usuario: Envía notificación 
-
-`    `Usuario->>Sistema: Confirma que recibió el recordatorio 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.074.png)
-
-**CANF01: Frecuencia de Envío** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Envía notificaciones con una tasa máxima de 2 por segundo 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.075.png)
-
-**CANF02: Disponibilidad del Sistema** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Usuario     participant Sistema 
-
-Usuario->>Sistema: Solicita configurar una notificación Sistema-->>Usuario: Asegura un 99.9% de disponibilidad anual ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.076.png)
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.077.png)
-
-6. **Historial Médico de Mascota** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Historial Médico de Mascota) 
-
-`    `(Historial Médico de Mascota) --> (Visualizar historial médico)     (Historial Médico de Mascota) --> (Registrar consultas médicas)     (Historial Médico de Mascota) --> (Filtrar eventos médicos) 
-
-`    `(Historial Médico de Mascota) --> (Exportar historial) 
-
-**Diagramas de Secuencia** 
-
-**CAF01: Visualización de Historial** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Solicita ver el historial médico     Sistema-->>Usuario: Muestra el historial completo 
-
-Universidad  Privada  de  Tacna    ![ref1]![ref2]![ref3]![ref4]![ref5]![ref6]![ref3]![ref7]![ref3]![ref8]
-
-Facultad  de Ingeniería ![ref3]   ![ref3]![ref6]![ref5]![ref9]![ref10]
-
-Escuela  Profesional  de  Ingeniería  de  Sistemas ![ref3]   ![ref11]![ref12]![ref5]![ref6]![ref3]![ref10]![ref3]![ref6]![ref5]![ref13]![ref3]![ref7]
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.078.png)
-
-**CAF02: Registro de Consultas** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Añade una consulta médica 
-
-`    `Sistema-->>Usuario: Guarda la consulta en el historial 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.079.png)
-
-**CAF03: Filtros de Búsqueda** 
-
-mermaid Copiar código sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Aplica filtro por fecha o tipo de evento 
-
-`    `Sistema-->>Usuario: Muestra los eventos relevantes según el filtro 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.080.png)
-
-**CAF04: Edición de Eventos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Solicita editar un evento médico 
-
-`    `Sistema-->>Usuario: Permite la edición de los datos del evento 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.081.png)
-
-**CAF05: Exportar Historial** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-Universidad  Privada  de  Tacna    ![ref1]![ref2]![ref3]![ref4]![ref5]![ref6]![ref3]![ref7]![ref3]![ref8]
-
-Facultad  de Ingeniería ![ref3]   ![ref3]![ref6]![ref5]![ref9]![ref10]
-
-Escuela  Profesional  de  Ingeniería  de  Sistemas ![ref3]   ![ref11]![ref12]![ref5]![ref6]![ref3]![ref10]![ref3]![ref6]![ref5]![ref13]![ref3]![ref7]
-
 participant Usuario 
 
 participant Sistema 
 
-Usuario->>Sistema: Solicita exportar el historial Sistema-->>Usuario: Genera archivo en formato PDF o Excel 
+Usuario ->> Sistema: Completa formulario correctamente Sistema -->> Usuario: Envía correo de confirmación 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.082.png)
-
-**CANF01: Escalabilidad** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Soporta hasta 1,000 registros por mascota sin afectar el rendimiento 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.083.png)
-
-**CANF02: Seguridad de Datos** 
-
-mermaid Copiar código 
-
-sequenceDiagram 
-Universidad  Privada  de  Tacna    ![ref1]![ref2]![ref3]![ref4]![ref5]![ref6]![ref3]![ref7]![ref3]![ref8]
-
-Facultad  de Ingeniería ![ref3]   ![ref6]![ref5]![ref9]![ref3]![ref10]
-
-Escuela  Profesional  de  Ingeniería  de  Sistemas ![ref3]   ![ref11]![ref12]![ref5]![ref6]![ref3]![ref10]![ref3]![ref6]![ref5]![ref13]![ref3]![ref7]
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Cifra el historial médico en tránsito y en reposo 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.084.png)
-
-7. **Agregar Veterinarias** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Administrador 
-
-`    `Administrador --> (Agregar Veterinarias) 
-
-`    `(Agregar Veterinarias) --> (Validar datos de la veterinaria) 
-
-`    `(Agregar Veterinarias) --> (Registrar veterinaria en el sistema)     (Agregar Veterinarias) --> (Asociar ubicación geográfica) 
-
-`    `(Agregar Veterinarias) --> (Confirmar registro) 
-
-**Diagramas de Secuencia CAF01: Validación de Datos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Envía formulario con datos incompletos     Sistema-->>Administrador: Retorna mensaje indicando los campos faltantes 
-
-
-Universidad  Privada  de  Tacna    ![ref1]![ref2]![ref3]![ref4]![ref5]![ref6]![ref3]![ref7]![ref3]![ref8]
-
-Facultad  de Ingeniería ![ref3]   ![ref6]![ref5]![ref9]![ref10]![ref3]
-
-Escuela  Profesional  de  Ingeniería  de  Sistemas ![ref3]   ![ref11]![ref12]![ref5]![ref6]![ref3]![ref10]![ref3]![ref6]![ref5]![ref13]![ref3]![ref7]
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.085.png)
-
-**CAF02: Registro Exitoso** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Completa formulario con datos válidos     Sistema-->>Administrador: Registra la veterinaria y confirma el registro 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.086.png)
-
-**CAF03: Geolocalización** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Añade coordenadas geográficas 
-
-`    `Sistema-->>Administrador: Asocia la ubicación a la veterinaria 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.087.png)
-
-**CAF04: Confirmación de Registro** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Completa el registro 
-
-`    `Sistema-->>Administrador: Confirma que la veterinaria fue registrada ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.088.png)
-
-**CAF05: Gestión de Veterinarias** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Administrador     participant Sistema 
-
-`    `Administrador->>Sistema: Solicita modificar datos de una veterinaria 
-
-`    `Sistema-->>Administrador: Permite realizar los cambios 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.089.png)
-
-**CANF01: Tiempo de Respuesta** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Completa el registro 
-
-`    `Sistema-->>Administrador: Responde en menos de 2 segundos 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.090.png)
-
-**CANF02: Accesibilidad** 
-
-mermaid 
-
-Copiar código sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Accede desde un navegador móvil o de escritorio 
-
-`    `Sistema-->>Administrador: Funciona correctamente en ambos entornos ![ref14]
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.091.png)
-
-8. **Eliminar Mascota** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Eliminar Mascota) 
-
-`    `(Eliminar Mascota) --> (Validar permisos) 
-
-`    `(Eliminar Mascota) --> (Solicitar confirmación) 
-
-`    `(Eliminar Mascota) --> (Eliminar datos de la mascota) 
-
-`    `(Eliminar Mascota) --> (Cancelar notificaciones asociadas) 
-
-**Diagramas de Secuencia** 
-
-**CAF01: Confirmación de Eliminación** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Solicita eliminar una mascota 
-
-`    `Sistema-->>Usuario: Solicita confirmación 
-
-`    `Usuario->>Sistema: Confirma eliminación 
-
-`    `Sistema-->>Usuario: Borra la mascota y muestra mensaje de éxito 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.092.png)
-
-**CAF02: Validación de Permisos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Intenta eliminar una mascota 
-
-`    `Sistema-->>Usuario: Verifica que sea el propietario de la cuenta 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.093.png)
-
-**CAF03: Eliminación Exitosa** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Confirma la eliminación 
-
-`    `Sistema-->>Usuario: Elimina los datos de la mascota 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.094.png)
-
-**CAF04: Historial Asociado** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Intenta acceder al historial de una mascota eliminada 
-
-`    `Sistema-->>Usuario: Muestra mensaje indicando que ya no está disponible 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.095.png)
-
-**CAF05: Cancelación de Notificaciones** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Solicita eliminar mascota con vacunas programadas 
-
-`    `Sistema-->>Usuario: Cancela todas las notificaciones asociadas 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.096.png)
-
-**CANF01: Persistencia** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `Sistema->>Sistema: Refleja la eliminación en la base de datos en menos de 3 segundos 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.097.png)
-
-**CANF02: Seguridad de Permisos** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Solicita eliminar una mascota 
-
-`    `Sistema-->>Sistema: Verifica que el usuario esté autenticado y autorizado ![ref15]
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.098.png)
-
-9. **Cambiar Contraseña** 
-
-**Diagrama de Caso de Uso** 
-
-mermaid 
-
-Copiar código 
-
-usecaseDiagram 
-
-`    `actor Usuario 
-
-`    `Usuario --> (Cambiar Contraseña) 
-
-`    `(Cambiar Contraseña) --> (Validar contraseña actual)     (Cambiar Contraseña) --> (Validar nueva contraseña)     (Cambiar Contraseña) --> (Actualizar contraseña) 
-
-`    `(Cambiar Contraseña) --> (Cerrar sesiones activas) 
-
-**Diagramas de Secuencia** 
-
-**CAF01: Validación de Contraseña Actual** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa contraseña actual incorrecta     Sistema-->>Usuario: Muestra mensaje de error 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.099.png)
-
-**CAF02: Validación de Nueva Contraseña** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Ingresa nueva contraseña que no cumple requisitos 
-
-`    `Sistema-->>Usuario: Solicita contraseña que cumpla con requisitos 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.100.png)
-
-**CAF03: Confirmación de Cambio** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Completa el cambio de contraseña 
-
-`    `Sistema-->>Usuario: Muestra mensaje confirmando el cambio 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.101.png)
-
-**CAF04: Notificación de Cambio** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Sistema 
-
-`    `participant Usuario 
-
-`    `Sistema-->>Usuario: Envía correo notificando el cambio de contraseña 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.102.png)
-
-**CAF05: Expiración de Sesiones** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Usuario 
-
-`    `participant Sistema 
-
-`    `Usuario->>Sistema: Cambia su contraseña 
-
-`    `Sistema-->>Usuario: Cierra todas las sesiones activas 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.103.png)
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.006.png)
 
 **CANF01: Seguridad de Contraseñas** 
 
@@ -1963,9 +110,11 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Sistema->>Sistema: Almacena las contraseñas cifradas con bcrypt ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.104.png)
+Sistema ->> Sistema: Cifra contraseñas utilizando bcrypt 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.007.png)
 
 **CANF02: Tiempo de Respuesta** 
 
@@ -1975,55 +124,37 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Usuario 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Usuario->>Sistema: Solicita cambiar la contraseña     Sistema-->>Usuario: Responde en menos de 3 segundos ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.105.png)
+Usuario ->> Sistema: Completa el registro 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.106.png)
+Sistema -->> Usuario: Responde en menos de 3 segundos ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.008.png)![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.009.png)
 
-10. **Rol de Administrador** 
+**HU02: Iniciar Sesión** 
 
 **Diagrama de Caso de Uso** 
 
-mermaid 
+plantuml 
 
 Copiar código 
 
-usecaseDiagram 
+@startuml 
 
-`    `actor Administrador 
+actor Usuario 
 
-`    `Administrador --> (Gestionar Usuarios) 
+Usuario --> (Iniciar Sesión) 
 
-`    `Administrador --> (Gestionar Veterinarias)     Administrador --> (Visualizar Reportes) 
+(Iniciar Sesión) --> (Validar Credenciales) 
 
-`    `Administrador --> (Configurar Roles) 
+(Iniciar Sesión) --> (Bloquear por Intentos Fallidos) @enduml 
 
-`    `Administrador --> (Auditar Actividades) 
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.010.png)
 
-**Diagramas de Secuencia CAF01: Gestión de Usuarios** 
+**Diagramas de Secuencia** 
 
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Solicita acceso al panel de usuarios     Sistema-->>Administrador: Muestra la lista de usuarios 
-
-`    `Administrador->>Sistema: Edita o elimina un usuario 
-
-`    `Sistema-->>Administrador: Confirma cambios 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.107.png)
-
-**CAF02: Gestión de Veterinarias** 
+**CAF06: Validación de Credenciales** 
 
 mermaid 
 
@@ -2031,31 +162,15 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Administrador 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Administrador->>Sistema: Solicita acceso al panel de veterinarias     Sistema-->>Administrador: Permite agregar, editar o eliminar veterinarias 
+Usuario ->> Sistema: Ingresa correo y contraseña válidos Sistema -->> Usuario: Permite acceso 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.108.png)
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.011.png)
 
-**CAF03: Visualización de Reportes** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Genera un reporte de usuarios o mascotas     Sistema-->>Administrador: Proporciona el reporte solicitado 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.109.png)
-
-**CAF04: Gestión de Roles** 
+**CAF07: Manejo de Errores** 
 
 mermaid 
 
@@ -2063,33 +178,15 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Administrador 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Administrador->>Sistema: Solicita modificar roles de un usuario     Sistema-->>Administrador: Permite editar permisos 
+Usuario ->> Sistema: Ingresa credenciales incorrectas Sistema -->> Usuario: Muestra mensaje de error 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.110.png)
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.012.png)
 
-**CAF05: Registro de Actividades** 
-
-mermaid 
-
-Copiar código 
-
-sequenceDiagram 
-
-`    `participant Administrador 
-
-`    `participant Sistema 
-
-`    `Administrador->>Sistema: Realiza cambios en el sistema 
-
-`    `Sistema-->>Administrador: Registra las acciones para auditoría 
-
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.111.png)
-
-**CANF01: Escalabilidad** 
+**CAF08: Bloqueo por Intentos Fallidos** 
 
 mermaid 
 
@@ -2097,13 +194,21 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Sistema 
+participant Usuario 
 
-`    `Sistema->>Sistema: Maneja hasta 1,000 administradores concurrentes 
+participant Sistema 
 
-![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.112.png)
+loop Hasta 5 intentos fallidos 
 
-**CANF02: Seguridad** 
+`    `Usuario ->> Sistema: Ingresa credenciales incorrectas     Sistema -->> Usuario: Muestra mensaje de error 
+
+end 
+
+Sistema -->> Usuario: Bloquea cuenta temporalmente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.013.png)
+
+**CAF09: Recordar Sesión** 
 
 mermaid 
 
@@ -2111,26 +216,2411 @@ Copiar código
 
 sequenceDiagram 
 
-`    `participant Administrador 
+participant Usuario 
 
-`    `participant Sistema 
+participant Sistema 
 
-`    `Administrador->>Sistema: Accede a funciones administrativas 
+Usuario ->> Sistema: Activa opción "Recordar sesión" Sistema -->> Usuario: Mantiene sesión abierta 
 
-`    `Sistema-->>Administrador: Solicita autenticación de dos factores (2FA) ![](img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.113.png)
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.014.png)
 
-[ref1]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.001.png
-[ref2]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.002.png
-[ref3]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.003.png
-[ref4]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.004.png
-[ref5]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.005.png
-[ref6]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.006.png
-[ref7]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.007.png
-[ref8]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.008.png
-[ref9]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.009.png
-[ref10]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.010.png
-[ref11]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.011.png
-[ref12]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.012.png
-[ref13]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.013.png
-[ref14]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.015.png
-[ref15]: img/Aspose.Words.64a506e7-bf2e-41ae-95af-f301b8fabc10.023.png
+**CAF10: Cierre Automático por Inactividad** 
+
+mermaid 
+
+Copiar código sequenceDiagram participant Usuario participant Sistema 
+
+Usuario ->> Sistema: Inactivo por más de 15 minutos Sistema -->> Usuario: Cierra sesión automáticamente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.015.png)
+
+**CANF03: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita iniciar sesión 
+
+Sistema -->> Usuario: Responde en menos de 2 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.016.png)
+
+**CANF04: Seguridad de Sesión** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Genera token seguro con expiración 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.017.png)
+
+**HU03: Recuperar Contraseña ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.018.png)**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Recuperar Contraseña) 
+
+(Recuperar Contraseña) --> (Validar Correo Existente) (Recuperar Contraseña) --> (Enviar Código de Recuperación) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.019.png)
+
+**Diagramas de Secuencia** 
+
+**CAF11: Solicitud de Recuperación** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa su correo 
+
+Sistema -->> Usuario: Envía correo con instrucciones de recuperación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.020.png)
+
+**CAF12: Validación de Correo Existente** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa un correo no registrado Sistema -->> Usuario: Muestra mensaje de error 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.021.png)
+
+**CAF13: Confirmación de Cambio** 
+
+mermaid 
+
+Copiar código sequenceDiagram participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa cambio de contraseña Sistema -->> Usuario: Muestra confirmación de éxito 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.022.png)
+
+**CAF14: Contraseña Segura** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa una contraseña débil 
+
+Sistema -->> Usuario: Solicita contraseña que cumpla requisitos ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.023.png)
+
+**CAF15: Verificación de Código** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa el código de recuperación Sistema -->> Usuario: Valida y permite cambiar la contraseña 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.024.png)
+
+**CANF05: Seguridad en el Proceso** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Expira códigos de recuperación tras 10 minutos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.025.png)
+
+**CANF06: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita recuperación 
+
+Sistema -->> Usuario: Responde en menos de 1 minuto 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.026.png)
+
+**HU04: Actualizar Perfil** 
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Actualizar Perfil) 
+
+(Actualizar Perfil) --> (Validar Datos) (Actualizar Perfil) --> (Guardar Cambios) (Actualizar Perfil) --> (Confirmar Actualización) @enduml ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.027.png)
+
+**Diagramas de Secuencia** 
+
+**CAF16: Validación de Datos** 
+
+mermaid 
+
+Copiar código sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Envía datos inválidos 
+
+Sistema -->> Usuario: Retorna mensaje indicando los errores 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.028.png)
+
+**CAF17: Confirmación de Cambios** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Realiza cambios en su perfil 
+
+Sistema -->> Usuario: Confirma que los cambios fueron exitosos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.029.png)
+
+**CAF18: Verificación de Correo** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Cambia su correo electrónico Sistema -->> Usuario: Envía correo de verificación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.030.png)
+
+**CAF19: Reversión de Cambios** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita revertir cambios en su perfil Sistema -->> Usuario: Reversa los cambios y confirma la acción ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.031.png)
+
+**CAF20: Actualización de Foto de Perfil** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Sube una nueva foto de perfil Sistema -->> Usuario: Guarda la nueva imagen correctamente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.032.png)
+
+**CANF07: Compatibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede desde diferentes navegadores 
+
+Sistema -->> Usuario: Funciona correctamente en Chrome, Firefox y Edge 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.033.png)
+
+**CANF08: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Realiza actualizaciones en su perfil Sistema -->> Usuario: Responde en menos de 3 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.034.png)
+
+**HU05: Agregar Mascota ![ref1]**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Agregar Mascota) 
+
+(Agregar Mascota) --> (Validar Campos Obligatorios) (Agregar Mascota) --> (Registrar Mascota) 
+
+(Agregar Mascota) --> (Confirmar Registro) 
+
+@enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.036.png)
+
+**Diagramas de Secuencia** 
+
+**CAF21: Validación de Campos Obligatorios** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa datos incompletos 
+
+Sistema -->> Usuario: Muestra mensaje indicando los campos faltantes 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.037.png)
+
+**CAF22: Registro Exitoso** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa el formulario correctamente Sistema -->> Usuario: Registra la mascota y confirma el éxito 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.038.png)
+
+**CAF23: Selección de Especie y Raza** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Selecciona una especie Sistema -->> Usuario: Muestra las razas disponibles 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.039.png)
+
+**CAF24: Validación de Fecha de Nacimiento** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa una fecha de nacimiento inválida Sistema -->> Usuario: Muestra mensaje de error ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.040.png)
+
+**CAF25: Confirmación de Registro** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Agrega una mascota correctamente Sistema -->> Usuario: Muestra mensaje confirmando el registro 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.041.png)
+
+**CANF09: Seguridad de Datos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Cifra los datos sensibles de la mascota 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.042.png)
+
+**CANF10: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa el registro de la mascota Sistema -->> Usuario: Responde en menos de 3 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.043.png)
+
+**HU06: Programar Citas ![ref1]**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Programar Citas) 
+
+(Programar Citas) --> (Seleccionar Fecha y Hora) (Programar Citas) --> (Confirmar Cita) (Programar Citas) --> (Notificar Veterinario) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.044.png)
+
+**Diagramas de Secuencia** 
+
+**CAF26: Selección de Fecha y Hora** 
+
+mermaid 
+
+Copiar código sequenceDiagram participant Usuario participant Sistema 
+
+Usuario ->> Sistema: Solicita una fecha y hora Sistema -->> Usuario: Valida disponibilidad y confirma 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.045.png)
+
+**CAF27: Confirmación de Cita** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa la programación de la cita Sistema -->> Usuario: Confirma y envía notificación. 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.046.png)
+
+**CAF28: Visualización de Citas Programadas** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita ver citas programadas Sistema -->> Usuario: Muestra las citas futuras 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.047.png)
+
+**CAF29: Cancelación de Cita** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita cancelar una cita 
+
+Sistema -->> Usuario: Cancela la cita y envía notificación al veterinario 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.048.png)
+
+**CAF30: Modificación de Cita** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita modificar fecha y hora Sistema -->> Usuario: Valida y actualiza la cita 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.049.png)
+
+**CANF11: Escalabilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Maneja múltiples usuarios programando citas simultáneamente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.050.png)
+
+**CANF12: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa la programación de citas Sistema -->> Usuario: Responde en menos de 5 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.051.png)
+
+**HU07: Notificaciones de Vacunas** 
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Notificaciones de Vacunas) 
+
+(Notificaciones de Vacunas) --> (Registrar Fechas de Vacunación) (Notificaciones de Vacunas) --> (Configurar Recordatorios) (Notificaciones de Vacunas) --> (Enviar Notificaciones Automáticas) @enduml ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.052.png)
+
+**Diagramas de Secuencia** 
+
+**CAF31: Registro de Vacunas** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Registra una vacuna con fecha 
+
+Sistema -->> Usuario: Programa la notificación correspondiente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.053.png)
+
+**CAF32: Personalización de Notificaciones** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Configura tiempo de aviso antes de vacuna Sistema -->> Usuario: Guarda configuración personalizada 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.054.png)
+
+**CAF33: Notificación Automática** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+participant Usuario 
+
+Sistema -->> Usuario: Envía notificación en la fecha programada Usuario ->> Sistema: Confirma recepción de la notificación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.055.png)
+
+**CAF34: Confirmación de Recepción** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Sistema -->> Usuario: Envía notificación 
+
+Usuario ->> Sistema: Confirma recepción de la notificación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.056.png)
+
+**CAF35: Cancelación de Notificaciones** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Elimina una vacuna registrada Sistema -->> Usuario: Cancela notificaciones asociadas 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.057.png)
+
+**CANF13: Disponibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Configura recordatorio 
+
+Sistema -->> Usuario: Garantiza disponibilidad del 99.9% anual 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.058.png)
+
+**CANF14: Frecuencia de Envío** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Envía notificaciones con una tasa máxima de 2 por segundo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.059.png)
+
+**HU08: Historial Médico de Mascota ![ref1]**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Historial Médico de Mascota) 
+
+(Historial Médico de Mascota) --> (Registrar Consultas) (Historial Médico de Mascota) --> (Visualizar Historial Completo) (Historial Médico de Mascota) --> (Exportar Historial) 
+
+@enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.060.png)
+
+**Diagramas de Secuencia** 
+
+**CAF36: Visualización de Historial Completo** 
+
+mermaid 
+
+Copiar código sequenceDiagram participant Usuario participant Sistema 
+
+Usuario ->> Sistema: Solicita historial médico Sistema -->> Usuario: Muestra el historial completo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.061.png)
+
+**CAF37: Registro de Consultas** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa detalles de una consulta médica Sistema -->> Usuario: Guarda consulta en el historial 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.062.png)
+
+**CAF38: Filtros de Búsqueda** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Aplica filtro por fecha y tipo de evento Sistema -->> Usuario: Muestra eventos relevantes según filtro 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.063.png)
+
+**CAF39: Exportación del Historial** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita exportar historial 
+
+Sistema -->> Usuario: Genera archivo en formato PDF o Excel ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.064.png)
+
+**CAF40: Edición de Eventos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita editar detalles de un evento Sistema -->> Usuario: Permite edición y guarda cambios 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.065.png)
+
+**CANF15: Escalabilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Maneja hasta 1,000 registros por mascota sin degradación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.066.png)
+
+**CANF16: Seguridad de Datos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Cifra datos del historial en tránsito y reposo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.067.png)
+
+**HU09: Agregar Veterinarias ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.068.png)**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Agregar Veterinarias) 
+
+(Agregar Veterinarias) --> (Buscar Veterinarias) 
+
+(Agregar Veterinarias) --> (Registrar Veterinarias en Lista) (Agregar Veterinarias) --> (Visualizar Detalles de Veterinarias) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.069.png)
+
+**Diagramas de Secuencia** 
+
+**CAF41: Búsqueda de Veterinarias** 
+
+mermaid Copiar código sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Busca veterinarias por nombre o ubicación Sistema -->> Usuario: Muestra resultados relevantes 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.070.png)
+
+**CAF42: Agregar Veterinaria** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Selecciona una veterinaria 
+
+Sistema -->> Usuario: Agrega veterinaria a su lista y confirma 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.071.png)
+
+**CAF43: Gestión de Veterinarias** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita eliminar veterinaria de su lista Sistema -->> Usuario: Elimina y confirma eliminación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.072.png)
+
+**CAF44: Visualización de Detalles** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita detalles de una veterinaria Sistema -->> Usuario: Muestra información completa ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.073.png)
+
+**CAF45: Geolocalización** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita ubicación de la veterinaria Sistema -->> Usuario: Muestra mapa con geolocalización 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.074.png)
+
+**CANF17: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Realiza búsqueda de veterinarias Sistema -->> Usuario: Responde en menos de 3 segundos ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.075.png)
+
+**CANF18: Compatibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede desde un dispositivo móvil 
+
+Sistema -->> Usuario: Funciona correctamente en dispositivos móviles 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.076.png)
+
+**HU10: Directorio de Farmacias** 
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Consultar Directorio de Farmacias) 
+
+(Consultar Directorio de Farmacias) --> (Buscar Farmacias) 
+
+(Consultar Directorio de Farmacias) --> (Ver Medicamentos Disponibles) (Consultar Directorio de Farmacias) --> (Agregar Farmacia a Favoritos) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.077.png)
+
+**Diagramas de Secuencia** 
+
+**CAF46: Búsqueda de Farmacias** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Busca farmacias por ubicación o nombre Sistema -->> Usuario: Muestra resultados relevantes 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.078.png)
+
+**CAF47: Visualización de Medicamentos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita lista de medicamentos de una farmacia Sistema -->> Usuario: Muestra los medicamentos disponibles ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.079.png)
+
+**CAF48: Agregar a Favoritos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Marca farmacia como favorita 
+
+Sistema -->> Usuario: Agrega farmacia a la lista de favoritos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.080.png)
+
+**CAF49: Filtrar por Servicios** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Aplica filtros de servicios en el directorio Sistema -->> Usuario: Muestra farmacias que cumplen los criterios ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.081.png)
+
+**CAF50: Contacto Directo** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita información de contacto de una farmacia Sistema -->> Usuario: Muestra teléfono y correo de la farmacia 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.082.png)
+
+**CANF19: Escalabilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Maneja hasta 500 farmacias registradas sin degradación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.083.png)
+
+**CANF20: Disponibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede al directorio de farmacias Sistema -->> Usuario: Asegura disponibilidad del 99.9% 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.084.png)
+
+**HU11: Reportes Personalizados ![ref1]**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Generar Reportes Personalizados) 
+
+(Generar Reportes Personalizados) --> (Configurar Filtros) (Generar Reportes Personalizados) --> (Descargar Reporte) (Generar Reportes Personalizados) --> (Compartir Reporte) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.085.png)
+
+**Diagramas de Secuencia** 
+
+**CAF51: Generación de Reportes** 
+
+mermaid Copiar código sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita generar reporte 
+
+Sistema -->> Usuario: Proporciona el reporte solicitado 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.086.png)
+
+**CAF52: Filtros Personalizados** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Aplica filtros específicos para el reporte Sistema -->> Usuario: Genera reporte basado en los filtros 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.087.png)
+
+**CAF53: Descarga de Reportes** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita descargar un reporte 
+
+Sistema -->> Usuario: Proporciona archivo en formato PDF o Excel 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.088.png)
+
+**CAF54: Visualización de Resumen** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita resumen general 
+
+Sistema -->> Usuario: Muestra gráfico interactivo con datos principales 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.089.png)
+
+**CAF55: Compartir Reportes** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita compartir reporte por correo Sistema -->> Usuario: Envía reporte al correo indicado 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.090.png)
+
+**CANF21: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita generar reporte Sistema -->> Usuario: Responde en menos de 5 segundos ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.091.png)
+
+**CANF22: Seguridad de Datos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Protege reportes contra accesos no autorizados 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.092.png)
+
+**HU12: Eliminar Mascota ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.093.png)**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Eliminar Mascota) 
+
+(Eliminar Mascota) --> (Confirmar Eliminación) 
+
+(Eliminar Mascota) --> (Validar Permisos) 
+
+(Eliminar Mascota) --> (Cancelar Notificaciones Asociadas) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.094.png)
+
+**Diagramas de Secuencia** 
+
+**CAF56: Confirmación de Eliminación** mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita eliminar una mascota Sistema -->> Usuario: Solicita confirmación de eliminación 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.095.png)
+
+**CAF57: Validación de Permisos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Intenta eliminar una mascota 
+
+Sistema -->> Usuario: Valida que sea el propietario de la cuenta 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.096.png)
+
+**CAF58: Eliminación Exitosa** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Confirma la eliminación Sistema -->> Usuario: Elimina mascota del sistema 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.097.png)
+
+**CAF59: Cancelación de Notificaciones** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita eliminar mascota con notificaciones pendientes 
+
+Sistema -->> Usuario: Cancela todas las notificaciones asociadas 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.098.png)
+
+**CAF60: Historial Asociado** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Intenta acceder al historial de una mascota eliminada 
+
+Sistema -->> Usuario: Informa que la mascota ya no está disponible 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.099.png)
+
+**CANF23: Persistencia** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Elimina datos de la mascota de la base de datos en menos de 3 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.100.png)
+
+**CANF24: Seguridad de Permisos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita eliminar una mascota 
+
+Sistema -->> Sistema: Verifica autenticación y permisos antes de proceder 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.101.png)
+
+**HU13: Cambiar Contraseña** 
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Cambiar Contraseña) 
+
+(Cambiar Contraseña) --> (Validar Contraseña Actual) (Cambiar Contraseña) --> (Ingresar Nueva Contraseña) (Cambiar Contraseña) --> (Confirmar Cambio) 
+
+@enduml ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.102.png)
+
+**Diagramas de Secuencia** 
+
+**CAF61: Validación de Contraseña Actual** 
+
+mermaid 
+
+Copiar código sequenceDiagram participant Usuario participant Sistema 
+
+Usuario ->> Sistema: Ingresa contraseña actual incorrecta Sistema -->> Usuario: Muestra mensaje de error 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.103.png)
+
+**CAF62: Validación de Nueva Contraseña** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa nueva contraseña que no cumple requisitos Sistema -->> Usuario: Solicita contraseña válida 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.104.png)
+
+**CAF63: Confirmación de Cambio** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa cambio de contraseña Sistema -->> Usuario: Confirma el cambio exitoso 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.105.png)
+
+**CAF64: Notificación de Cambio** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+participant Usuario 
+
+Sistema -->> Usuario: Envía correo notificando el cambio de contraseña 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.106.png)
+
+**CAF65: Expiración de Sesiones** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Cambia su contraseña 
+
+Sistema -->> Usuario: Cierra todas las sesiones activas 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.107.png)
+
+**CANF25: Seguridad de Contraseñas** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Almacena contraseñas cifradas con bcrypt 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.108.png)
+
+**CANF26: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita cambiar contraseña Sistema -->> Usuario: Responde en menos de 3 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.109.png)
+
+**HU14: Rol de Administrador ![ref1]**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Administrador 
+
+Administrador --> (Gestionar Usuarios) Administrador --> (Gestionar Veterinarias) Administrador --> (Visualizar Reportes) Administrador --> (Configurar Roles) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.110.png)
+
+**Diagramas de Secuencia** 
+
+**CAF66: Gestión de Usuarios** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Administrador 
+
+participant Sistema 
+
+Administrador ->> Sistema: Solicita acceso al panel de usuarios Sistema -->> Administrador: Muestra lista de usuarios Administrador ->> Sistema: Edita o elimina un usuario 
+
+Sistema -->> Administrador: Confirma los cambios 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.111.png)
+
+**CAF67: Gestión de Veterinarias** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Administrador 
+
+participant Sistema 
+
+Administrador ->> Sistema: Accede al panel de veterinarias Sistema -->> Administrador: Permite agregar, editar o eliminar veterinarias 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.112.png)
+
+**CAF68: Visualización de Reportes** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Administrador 
+
+participant Sistema 
+
+Administrador ->> Sistema: Genera un reporte del sistema Sistema -->> Administrador: Proporciona reporte solicitado 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.113.png)
+
+**CAF69: Configuración de Roles** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Administrador 
+
+participant Sistema 
+
+Administrador ->> Sistema: Modifica permisos de un usuario Sistema -->> Administrador: Actualiza los roles correctamente ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.114.png)
+
+**CAF70: Auditoría de Actividades** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Administrador 
+
+participant Sistema 
+
+Administrador ->> Sistema: Realiza cambios críticos en el sistema Sistema -->> Administrador: Registra las acciones para auditoría 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.115.png)
+
+**CANF27: Escalabilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Soporta hasta 1,000 administradores concurrentes 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.116.png)
+
+**CANF28: Seguridad de Roles** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Administrador 
+
+participant Sistema 
+
+Administrador ->> Sistema: Solicita acceso a funciones críticas Sistema -->> Administrador: Solicita autenticación de dos factores (2FA) 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.117.png)
+
+**HU15: Soporte Técnico ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.118.png)**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Contactar Soporte Técnico) 
+
+(Contactar Soporte Técnico) --> (Completar Formulario) (Contactar Soporte Técnico) --> (Generar Ticket de Soporte) (Contactar Soporte Técnico) --> (Visualizar Estado del Ticket) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.119.png)
+
+**Diagramas de Secuencia** 
+
+**CAF71: Solicitud de Ayuda** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Completa formulario de soporte Sistema -->> Usuario: Confirma generación de ticket 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.120.png)
+
+**CAF72: Respuesta Automática** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Envía solicitud de soporte 
+
+Sistema -->> Usuario: Genera ticket y envía respuesta automática ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.121.png)
+
+**CAF73: Visualización del Estado del Ticket** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Consulta estado del ticket Sistema -->> Usuario: Muestra progreso del ticket 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.122.png)
+
+**CAF74: Prioridad de Casos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Describe problema urgente Sistema -->> Usuario: Asigna prioridad alta al caso 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.123.png)
+
+**CAF75: Escalamiento de Problemas** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Reporta problema no resuelto Sistema -->> Usuario: Escala el caso a nivel superior 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.124.png)
+
+**CANF29: Tiempo de Respuesta Inicial** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Envía solicitud de soporte Sistema -->> Usuario: Responde en menos de 1 minuto ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.125.png)
+
+**CANF30: Disponibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede al módulo de soporte 
+
+Sistema -->> Usuario: Garantiza disponibilidad 24/7 con 99.9% de uptime 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.126.png)
+
+**HU16: Cierre de Sesión Automático** 
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Cierre de Sesión Automático) 
+
+(Cierre de Sesión Automático) --> (Detectar Inactividad) (Cierre de Sesión Automático) --> (Notificar al Usuario) (Cierre de Sesión Automático) --> (Cerrar Sesión) @enduml ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.127.png)
+
+**Diagramas de Secuencia** 
+
+**CAF76: Detección de Inactividad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: No realiza actividad por más de 15 minutos 
+
+Sistema -->> Usuario: Detecta inactividad 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.128.png)
+
+**CAF77: Notificación de Cierre** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+participant Usuario 
+
+Sistema -->> Usuario: Envía notificación de cierre inminente Usuario ->> Sistema: Responde para mantener sesión activa (opcional) 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.129.png)
+
+**CAF78: Cierre Seguro** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Invalida token de sesión y cierra sesión del usuario 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.130.png)
+
+**CAF79: Persistencia de Datos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Cierra sesión automáticamente 
+
+Sistema -->> Usuario: Guarda cambios no enviados antes de cerrar sesión 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.131.png)
+
+**CAF80: Reautenticación** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Intenta acceder después del cierre automático Sistema -->> Usuario: Solicita credenciales nuevamente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.132.png)
+
+**CANF31: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Completa cierre de sesión en menos de 1 segundo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.133.png)
+
+**CANF32: Seguridad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Invalida todos los tokens activos asociados al usuario 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.134.png)
+
+**HU17: Visualización en Móviles ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.135.png)**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Visualización en Móviles) 
+
+(Visualización en Móviles) --> (Adaptación Responsiva) (Visualización en Móviles) --> (Compatibilidad con Navegadores) (Visualización en Móviles) --> (Optimización de Recursos) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.136.png)
+
+**Diagramas de Secuencia** 
+
+**CAF81: Diseño Responsivo** 
+
+mermaid 
+
+Copiar código sequenceDiagram participant Usuario participant Sistema 
+
+Usuario ->> Sistema: Accede desde un dispositivo móvil 
+
+Sistema -->> Usuario: Adapta diseño a la pantalla del dispositivo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.137.png)
+
+**CAF82: Navegación Intuitiva** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Interactúa con la interfaz móvil 
+
+Sistema -->> Usuario: Proporciona una experiencia fluida y clara 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.138.png)
+
+**CAF83: Acceso a Funcionalidades Principales** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita funcionalidades desde móvil Sistema -->> Usuario: Habilita acceso a todas las funciones principales 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.139.png)
+
+**CAF84: Optimización de Imágenes** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita recursos gráficos desde móvil Sistema -->> Usuario: Carga imágenes optimizadas para dispositivos móviles 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.140.png)
+
+**CAF85: Notificaciones Push** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Habilita notificaciones push en el móvil Sistema -->> Usuario: Envia notificaciones programadas 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.141.png)
+
+**CANF33: Compatibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede desde navegadores móviles Sistema -->> Usuario: Funciona correctamente en Android e iOS ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.142.png)
+
+**CANF34: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita acceso desde móvil Sistema -->> Usuario: Carga en menos de 3 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.143.png)
+
+**HU18: Seguridad de Datos ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.144.png)**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Seguridad de Datos) 
+
+(Seguridad de Datos) --> (Encriptación de Datos) (Seguridad de Datos) --> (Autenticación de Usuario) (Seguridad de Datos) --> (Registro de Actividades) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.145.png)
+
+**Diagramas de Secuencia** 
+
+**CAF86: Encriptación de Datos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Ingresa datos sensibles 
+
+Sistema ->> Sistema: Cifra datos antes de almacenarlos Sistema -->> Usuario: Confirma que los datos están protegidos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.146.png)
+
+**CAF87: Autenticación de Usuario** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita acceso 
+
+Sistema -->> Usuario: Valida credenciales y permite acceso 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.147.png)
+
+**CAF88: Protección de Sesiones** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Inicia sesión 
+
+Sistema ->> Sistema: Genera token seguro para autenticación Sistema -->> Usuario: Permite acceso al sistema 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.148.png)
+
+**CAF89: Registro de Actividades** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Realiza una acción sensible 
+
+Sistema ->> Sistema: Registra la acción en los logs de auditoría ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.149.png)
+
+**CAF90: Manejo de Errores de Seguridad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Intenta acceso no autorizado 
+
+Sistema ->> Sistema: Bloquea intento y registra actividad Sistema -->> Usuario: Notifica intento fallido 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.150.png)
+
+**CANF35: Cifrado de Datos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Cifra todos los datos sensibles en tránsito y reposo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.151.png)
+
+**CANF36: Tiempo de Respuesta** 
+
+mermaid 
+
+Copiar código sequenceDiagram 
+
+participant Usuario participant Sistema 
+
+Usuario ->> Sistema: Solicita autenticación Sistema -->> Usuario: Valida en menos de 2 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.152.png)
+
+**HU19: Tiempo de Respuesta Rápido** 
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Tiempo de Respuesta Rápido) 
+
+(Tiempo de Respuesta Rápido) --> (Optimización de Consultas) (Tiempo de Respuesta Rápido) --> (Caché de Recursos) 
+
+(Tiempo de Respuesta Rápido) --> (Reducción de Tamaño de Archivos) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.153.png)
+
+**Diagramas de Secuencia** 
+
+**CAF91: Optimización de Consultas** 
+
+mermaid 
+
+Copiar código sequenceDiagram 
+
+Usuario ->> Sistema: Solicita datos desde una página Sistema ->> Sistema: Optimiza consultas en la base de datos Sistema -->> Usuario: Responde con datos rápidamente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.154.png)
+
+**CAF92: Caché de Recursos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede a una página por segunda vez Sistema ->> Sistema: Recupera recursos estáticos del caché Sistema -->> Usuario: Carga la página con recursos en caché 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.155.png)
+
+**CAF93: Reducción de Tamaño de Archivos** 
+
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Solicita una página web 
+
+Sistema ->> Sistema: Minimiza archivos CSS y JavaScript Sistema -->> Usuario: Envía archivos optimizados 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.156.png)
+
+**CAF94: Monitorización de Rendimiento** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Monitorea rendimiento en tiempo real 
+
+Sistema -->> Administrador: Reporta posibles problemas de rendimiento ![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.157.png)
+
+**CAF95: Tiempo de Carga** mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede a una página 
+
+Sistema -->> Usuario: Carga la página en menos de 3 segundos 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.158.png)
+
+**CANF37: Escalabilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Mantiene tiempos de respuesta consistentes con 10,000 usuarios concurrentes 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.159.png)
+
+**CANF38: Disponibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Accede al sistema 
+
+Sistema -->> Usuario: Garantiza un uptime del 99.9% anual 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.160.png)
+
+**HU20: Modo Oscuro ![ref1]**
+
+**Diagrama de Caso de Uso** 
+
+plantuml 
+
+Copiar código 
+
+@startuml 
+
+actor Usuario 
+
+Usuario --> (Modo Oscuro) 
+
+(Modo Oscuro) --> (Activación de Modo Oscuro) (Modo Oscuro) --> (Guardado de Preferencias) (Modo Oscuro) --> (Compatibilidad de Elementos) @enduml 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.161.png)
+
+**Diagramas de Secuencia** 
+
+**CAF96: Activación de Modo Oscuro** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Activa modo oscuro 
+
+Sistema -->> Usuario: Actualiza la interfaz al modo oscuro 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.162.png)
+
+**CAF97: Guardado de Preferencias** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Cambia al modo oscuro 
+
+Sistema ->> Sistema: Guarda preferencia del usuario 
+
+Sistema -->> Usuario: Aplica preferencia en sesiones futuras 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.163.png)
+
+**CAF98: Compatibilidad de Elementos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Cambia entre modo oscuro y claro 
+
+Sistema ->> Sistema: Asegura compatibilidad de todos los elementos visuales 
+
+Sistema -->> Usuario: Interfaz adaptada correctamente 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.164.png)
+
+**CAF99: Alternancia Rápida** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Alterna entre modos oscuro y claro Sistema -->> Usuario: Cambia en menos de 1 segundo 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.165.png)
+
+**CAF100: Accesibilidad del Modo Oscuro** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Activa modo oscuro 
+
+Sistema -->> Usuario: Proporciona un diseño accesible conforme a estándares WCAG 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.166.png)
+
+**CANF39: Compatibilidad** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Usuario 
+
+participant Sistema 
+
+Usuario ->> Sistema: Usa modo oscuro en diferentes navegadores Sistema -->> Usuario: Funciona correctamente en Chrome, Firefox y Edge 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.167.png)
+
+**CANF40: Consumo de Recursos** 
+
+mermaid 
+
+Copiar código 
+
+sequenceDiagram 
+
+participant Sistema 
+
+Sistema ->> Sistema: Garantiza que el modo oscuro no aumente significativame 
+
+![](img/Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.168.png)
+
+[ref1]: Aspose.Words.e50a2bb2-48a6-43f0-9cb1-b370c8dc3049.035.png
