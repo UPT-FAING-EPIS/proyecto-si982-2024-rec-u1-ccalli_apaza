@@ -1,5 +1,6 @@
+==================================================
 **Sistema Web de Gestión Veterinaria para Mascotas**
- 
+ ==================================================
  **HU01: Registrar Usuario** 
 
 **Diagrama de Caso de Uso** 
