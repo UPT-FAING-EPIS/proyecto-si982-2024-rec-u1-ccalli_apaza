@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.AssemblyInfo.cs
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.RazorAssemblyInfo.cache
+C:\Users\HP\source\repos\SysVet\SysVet\obj\Debug\net8.0\SysVet.RazorAssemblyInfo.cs
